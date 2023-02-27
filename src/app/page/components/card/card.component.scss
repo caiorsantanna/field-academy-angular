@@ -1,0 +1,45 @@
+.container {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  border: thin solid black;
+  border-radius: 12px;
+
+  &--list {
+    flex-direction: column;
+  }
+
+  &--wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: calc(100% - 24px);
+    height: calc(100% - 24px);
+    transform: translate(-50%, -50%);
+  }
+
+  span {
+    padding: 0px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border: thin solid black;
+    border-radius: 12px;
+  }
+
+  .mdc-icon-button {
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: thin solid black;
+    border-radius: 100%;
+  }
+
+  form {
+    width: 100%;
+  }
+}

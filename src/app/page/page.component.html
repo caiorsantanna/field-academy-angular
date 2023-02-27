@@ -1,0 +1,41 @@
+<div class="container container--list container--wrapper">
+  <form [formGroup]="form" (ngSubmit)="createCustomer()">
+    <div class="container">
+      <mat-form-field appearance="outline">
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="Inserir nome..." formControlName="name">
+        <mat-icon matSuffix>person</mat-icon>
+        <mat-error>{{ getErrorMessage('name') }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Inserir email..." formControlName="email">
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-error>{{ getErrorMessage('email') }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Documento</mat-label>
+        <input matInput placeholder="Inserir documento..." formControlName="document">
+        <mat-icon matSuffix>badge</mat-icon>
+        <mat-error>{{ getErrorMessage('document') }}</mat-error>
+      </mat-form-field>
+
+      <button
+        mat-raised-button color="primary"
+        [disabled]="form.invalid"
+        (click)="createCustomer()">
+        Criar cliente
+      </button>
+    </div>
+  </form>
+
+  <div class="container container--list">
+    <app-page-card *ngFor="let customer of customers" [customer]="customer"></app-page-card>
+
+    <div class="container" *ngIf="!customers.length">
+      Não há clientes cadastrados
+    </div>
+  </div>
+</div>

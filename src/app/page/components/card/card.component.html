@@ -1,0 +1,9 @@
+<div class="container">
+  <button mat-icon-button color="warn">
+    <mat-icon>delete</mat-icon>
+  </button>
+
+  <span>{{ customer.name }}</span>
+  <span>{{ customer.email }}</span>
+  <span *ngIf="customer.document">{{ customer.document | cpfCnpjFormat }}</span>
+</div>
